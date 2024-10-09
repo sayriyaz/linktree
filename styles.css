@@ -1,28 +1,43 @@
+/* Global Gradient Animation */
+@keyframes gradientBackground {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f9;
     margin: 0;
     padding: 0;
+    font-family: Arial, sans-serif;
+    height: 100vh;
+    background: linear-gradient(270deg, #007bff, #00c6ff, #24c6dc, #514a9d);
+    background-size: 600% 600%;
+    animation: gradientBackground 15s ease infinite;
     display: flex;
     justify-content: center;
-    align-items: flex-start; /* Align items to the top to avoid cut-off */
-    min-height: 100vh;
-    overflow-y: auto; /* Allow scrolling when content exceeds viewport */
+    align-items: flex-start; /* Align content to start of page */
 }
 
 .container {
     text-align: center;
-    background-color: #fff;
+    background-color: rgba(255, 255, 255, 0.8);
     padding: 30px;
     border-radius: 10px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     width: 90%;
     max-width: 600px;
-    margin-top: 20px; /* Ensure the container is not glued to the top */
+    margin-top: 20px; /* Add margin to the top to prevent overlay */
+    backdrop-filter: blur(10px); /* Glassmorphism effect */
 }
 
 .logo img {
-    width: 150px;
+    width: 120px; /* Reduce the size of the logo */
     height: auto;
     margin-bottom: 20px;
     display: block;
@@ -31,7 +46,7 @@ body {
 }
 
 .tagline h2 {
-    font-size: 16px;
+    font-size: 18px;
     color: #333;
     margin-bottom: 20px;
     line-height: 1.4;
@@ -41,26 +56,36 @@ body {
     margin-top: 20px;
 }
 
-.links a {
-    display: block;
+.button {
+    display: inline-block;
     margin: 10px 0;
-    padding: 15px;
-    background-color: #007BFF;
+    padding: 15px 30px;
+    font-size: 16px;
     color: white;
     text-decoration: none;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-    font-size: 16px;
+    background: linear-gradient(45deg, #ff416c, #ff4b2b);
+    border-radius: 30px;
+    transition: all 0.4s ease;
+    background-size: 200% 200%;
 }
 
-.links a:hover {
-    background-color: #0056b3;
+.button:hover {
+    background: linear-gradient(45deg, #24c6dc, #514a9d);
+    background-size: 200% 200%;
+    color: white;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
 }
 
-.links a:active {
-    background-color: #004080;
+/* Map container and responsiveness */
+.map-container {
+    margin-top: 20px;
+    width: 100%;
 }
 
-html, body {
-    height: 100%; /* Ensures the body covers the full viewport height */
+.map-container iframe {
+    width: 100%;
+    height: 300px;
+    border: 0;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
