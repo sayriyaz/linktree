@@ -23,7 +23,17 @@ body {
     justify-content: center;
     align-items: flex-start; /* Align content to start of page */
 }
-
+.circle {
+    width: 20px;
+    height: 20px;
+    border: 1px solid #000;
+    position: absolute;
+    border-radius: 50%; /* Ensures it's a circle */
+    pointer-events: none; /* Prevents the circle from interfering with clicks */
+    transition: transform 0.5s, opacity 0.5s;
+    transform: translate(-10px, -10px); /* Initial transform for centering */
+}
+  
 .container {
     text-align: center;
     background-color: rgba(255, 255, 255, 0.8);
